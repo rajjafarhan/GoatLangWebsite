@@ -1,9 +1,11 @@
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { createRoot } from "react-dom/client";
+import Sidebar from './components/sidebar/sidebar';
 
 const App = () => {
   return (
-    <div><b>Goatlang website coming</b> </div>
+    <div><Sidebar/> </div>
   )
 }
 
