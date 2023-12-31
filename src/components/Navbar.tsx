@@ -1,6 +1,4 @@
-import { IoMenuOutline } from "react-icons/io5";
-import { IoMdClose } from "react-icons/io";
-import Editor from "./Editor";
+
 
 
 const Navbar = () => {
