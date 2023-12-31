@@ -55,7 +55,7 @@ const Navbar = () => {
     </nav>
 
     {/* Hero Section */}
-    <section className="bg-teal-500 p-16 text-zinc-50 pt-20">
+    {/* <section className="bg-teal-500 p-16 text-zinc-50 pt-20">
       <div className="flex">
         <div className="w-1/2 pr-8">
           <p className="text-5xl  mb-4">
@@ -69,7 +69,7 @@ const Navbar = () => {
           <Editor />
         </div>
       </div>
-    </section>
+    </section> */}
   </div>
   );
 };
