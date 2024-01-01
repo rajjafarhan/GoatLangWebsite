@@ -47,7 +47,7 @@ const HomePage: React.FC = () => {
 
   return (
     <div className='flex w-full items-center justify-center'>
-    <div className=' w-[88%] h-auto m-6 flex flex-col items-center'>
+    <div className=' w-full h-auto m-6 flex flex-col items-center'>
        <div className=' w-full'>
       <h1 className='text-4xl font-bold font-2 text-teal-700'>GoatLang Troubleshoot: <span className=' text-3xl font-normal text-teal-500' > Share Your Programming Challenges and Solutions!</span></h1>
       </div>

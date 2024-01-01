@@ -23,8 +23,8 @@ const PostForm: React.FC<PostFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='w-full px-2 py-6'>
-      <div className="mb-4">
+    <form onSubmit={handleSubmit} className='w-full px-2 py-4 sm:py-2'>
+      <div className="mb-4 ">
         <label htmlFor="title" className="block text-gray-600 text-lg font-medium mb-2">
           Title
         </label>
@@ -33,7 +33,7 @@ const PostForm: React.FC<PostFormProps> = ({ onSubmit }) => {
           id="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="w-full px-3 py-4 border-2 rounded-md"
+          className="w-full px-3 py-4  border-2 rounded-md"
           required
         />
       </div>
@@ -45,7 +45,7 @@ const PostForm: React.FC<PostFormProps> = ({ onSubmit }) => {
           id="content"
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          className="w-full px-3 py-4 border-2 rounded-md"
+          className="w-full px-3 py-4  border-2 rounded-md"
           rows={6}
           required
         ></textarea>
