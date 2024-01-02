@@ -3,11 +3,11 @@ import Cards from './Cards';
 
 const Footer = () => {
     return (
-        <footer className="bg-teal-500 text-zinc-50 py-8">
+        <footer className="bg-teal-700 text-zinc-50 py-8 px-4 w-screen">
           <div className="container mx-auto">
             {/* Custom Component */}
-            <div className="mb-4">
-              <Cards bgColor='bg-teal-500'/>
+            <div className="mb-4 w-full">
+              <Cards bgColor='bg-teal-700'/>
             </div>
             
             {/* Horizontal Line */}
