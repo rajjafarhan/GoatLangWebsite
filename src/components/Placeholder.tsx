@@ -1,11 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import { links } from './SideMenu';
+import { links } from '../utils';
+
 
 const Placeholder = () => {
   return (
     <div
-        className={`side-menu h-screen w-72 bg-[#eee] `}
+        className={`side-menu h-1483 w-72 bg-[#eee] `}
       >
         {links.map((link) => {
           return (

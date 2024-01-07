@@ -1,9 +1,11 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Docs from './pages/Docs'
-import { Handbook } from './pages/Handbook'
+
 import Home from './pages/Home'
+import Handbook from './pages/Handbook'
 
 
 function App() {
@@ -11,9 +13,11 @@ function App() {
 
   return (
     <> <Navbar/>
-    {/* <Home/> */}
-    {/* <Docs/> */}
-    <Handbook/>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/docs" element={<Docs />} />
+      <Route path="/handbook/*" element={<Handbook />} />
+    </Routes>
     <Footer/>
     </>
   )
