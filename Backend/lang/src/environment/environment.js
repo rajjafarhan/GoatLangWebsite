@@ -1,0 +1,15 @@
+export const keywords = [
+    'global',
+    'const',
+    'if',
+    'else',
+    'elf',
+    'for',
+    'from',
+    'to',
+    'by',
+    'display',
+    'return',
+    'fun',
+    'until',
+]

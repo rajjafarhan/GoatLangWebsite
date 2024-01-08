@@ -1,0 +1,26 @@
+{
+  "name": "goatlang",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/generator": "^7.23.3",
+    "@babel/parser": "^7.23.3",
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.12"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1"
+  },
+  "bin": {
+    "goat run": "./src/tokenization/executionScript.js",
+    "goat": "./src/REPL/REPL.js"
+  }
+}
