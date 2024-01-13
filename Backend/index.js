@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 
-// import { tokenize } from '../../lang/src/tokenization/tokenize.js';
 import { tokenize } from './lang/src/tokenization/tokenize.js';
 import { generateAst } from './lang/src/parsing/ast.js';
 import generate from '@babel/generator';
@@ -263,17 +262,10 @@ app.post('/api/output', async (req, res) => {
     let jsCode = generate.default(ast).code;
 
     // Example: Running a simple JavaScript code using compile-run
-    const sourcecode = `let a = "Ammar was a good boy😊";let i = 0;while (i < 10) {console.log(a);i++;}console.log("Ammar met the world🌎");
     
-    console.log("Ammar became bad👿");`;
     const result = await node.runSource(jsCode);
     const final = result.stdout  ;
     const astree = traverseBFS(ast)
-
-    // console.log(ast)
-    // console.log(astree)
-
-    // loopBug comments
 
 
     res.status(200).send({ jsCode, final,ast,astree });

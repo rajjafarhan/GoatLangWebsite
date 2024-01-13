@@ -13,11 +13,21 @@ export function tokenize(code) {
 
     while (i < code.length) {
         if (code[i] === '\r' || code[i] === '\n') {
-            i++
+            i++;
         }
-        while (/^[a-zA-Z0-9_$@#]$/.test(code[i])) {
+
+        if(code[i]==='#' && code[i+1] === '#'){
+            i+=2;
+            while(code[i]!=='\n' && i < code.length){
+                i++;
+            }
+            i++;
+        }
+        
+        
+        while (/^[a-zA-Z0-9_$@]$/.test(code[i])) {
             char = char + code[i]
-            i++
+            i++;
         }
         while (code[i] === ' ') {
             i++
@@ -35,6 +45,7 @@ export function tokenize(code) {
             })
             char = ''
         } else if (code[i] !== '=' && char !== '' && !keywords.includes(char)) {
+            console.log(code[i]);
             tokens.push({
                 type: 'identifier',
                 value: char,
@@ -154,7 +165,7 @@ export function tokenize(code) {
             i++
         }
         if (code[i] === '*') {
-            let temp = ""
+            let temp = ''
             while (code[i] === '*') {
                 temp = temp + code[i]
                 i++
@@ -177,18 +188,37 @@ export function tokenize(code) {
             }
         }
         if (code[i] === '<') {
+            if (code[i + 1] === "=" ){
+                tokens.push({
+                    type:"operator",
+                    value: "<="
+                })
+                i++
+                i++
+            }
+            else{
             tokens.push({
                 type: 'less_than',
                 value: '<',
             })
             i++
+            }
         }
         if (code[i] === '>') {
+            if (code[i + 1] === "=" ){
+                tokens.push({
+                    type:"operator",
+                    value: ">="
+                })
+                i++
+                i++
+            }else {
             tokens.push({
                 type: 'greater_than',
-                value: '<',
+                value: '>',
             })
             i++
+            }
         }
         if (code[i] === '{' && tokens[tokens.length - 1].value !== '=' && tokens[tokens.length - 1].value !== ':') {
             functionCount++
@@ -343,7 +373,8 @@ export function tokenize(code) {
             })
             char = ''
         }
-
+        
+        
         if (!isNaN(parseInt(code[i])) && char === '') {
             let decimalCount = 0
             let num = ''
@@ -355,7 +386,6 @@ export function tokenize(code) {
                     throw new Error('Invalid number')
                 }
                 num = num + code[i]
-                console.log(code[i])
                 i++
             }
             tokens.push({
@@ -363,8 +393,12 @@ export function tokenize(code) {
                 value: parseInt(num),
             })
         }
+
+        
     }
     return tokens
 }
 
-//console.log(tokenize(code))
+// const code = `##aerfergergeg`
+
+// console.log(tokenize(code))
