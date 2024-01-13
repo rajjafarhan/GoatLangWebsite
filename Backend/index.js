@@ -255,7 +255,7 @@ app.get("/",(req,res)=>{
     res.send("server is Running!")
 })
 
-app.post('/api/output', async (req, res) => {
+app.post('/', async (req, res) => {
   try {
     const code = req.body.formatedCodeInput;
 
