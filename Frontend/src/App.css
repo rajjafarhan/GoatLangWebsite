@@ -1,0 +1,40 @@
+
+
+.blink {
+    animation: blinker 1s infinite;
+  }
+  
+  @keyframes blinker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* custom-tree.css */
+
+.node__root > circle {
+  fill: red;
+}
+
+.node__branch > circle {
+  fill: yellow;
+}
+
+.node__leaf {
+  color: red;
+}
+
+.node__leaf > circle {
+  fill: rgb(227, 114, 227);
+}
+
+#treeWrapper > div{
+  height: 100%;
+  width: 100%;
+}
