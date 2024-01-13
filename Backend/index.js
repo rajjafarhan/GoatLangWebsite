@@ -248,7 +248,7 @@ function traverseBFS (jsonTree) {
     return jsonTree
 }
 
-app.use("/",(req,res)=>{
+app.get("/",(req,res)=>{
     res.send("server is Running!")
 })
 
