@@ -1,8 +1,11 @@
 import express from 'express';
 import cors from 'cors';
 
-import { tokenize } from './lang/src/tokenization/tokenize.js';
-import { generateAst } from './lang/src/parsing/ast.js';
+import { tokenize } from '../../lang/src/tokenization/tokenize.js';
+import { generateAst } from '../../lang/src/parsing/ast.js';
+
+// import { tokenize } from './lang/src/tokenization/tokenize.js';
+// import { generateAst } from './lang/src/parsing/ast.js';
 import generate from '@babel/generator';
 import { node } from 'compile-run';
 const port = 3000;
