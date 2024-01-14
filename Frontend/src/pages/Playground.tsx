@@ -31,7 +31,7 @@ const showValue = async () => {
   const formatedCodeInput = formatCodeToSingleLine(codee);
 
   try {
-    const response = await fetch('http://localhost:3000/api/output', {
+    const response = await fetch('http://localhost:3000', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -47,15 +47,17 @@ const showValue = async () => {
       setEr(formattedStackTrace);
       setOp('')
     } else {
-      const {  final,ast,astree } = await response.json();
+      
+      const { jsCode, final,ast, message } = await response.json();
       // const {  ast } = await response.json();
-      console.log(final)
+      
       // astree = ast
-      setAstree(astree)      
+      // setAstree(astree)      
       setEr('')
       setOp(final);
     }
   } catch (error) {
+
     console.error("Error in catch:", error);
   }
 };
