@@ -18,18 +18,22 @@ const HandBookContent = () => {
 
     <div style={cardStyle} className='w-2/3 ml-10 mt-10 p-10 mb-10'>
     <h5 className='text-4xl mb-5 font-bold'>{content?.title}</h5>
-    <p className='text-lg'>
+    <div className='text-lg w-full'>
    
-    {content?.content.desc}
-    </p>
-    <h1 className='text-black text-3xl mt-2 '>{content?.content.h1}</h1>
-    <h2 className='text-black mt-4 text-2xl '>{content?.content.h1a}</h2>
+    {content?.content?.desc}
+    </div>
+    <h1 className='text-black text-3xl mt-4 '>{content?.content?.h1}</h1>
+   
     
     {content?.code.map((item , index)=>(
       <>
-      <p className='text-black mt-4 text-xl'>{item.head}</p>
-       <div className='bg-neutral-200 text-black px-6 text-lg w-[70%] py-4 mt-2 shadow-md shadow-neutral-400 '><pre>{item.codeString}</pre></div>
-       <p className='mt-2 text-black'>{item.explanation}</p>
+      <div className='text-black mt-8 text-2xl w-full'>{item?.head}</div>
+     
+       <div className='bg-neutral-200 text-black px-6 text-md w-[70%] py-4 mt-2 shadow-md shadow-neutral-400 whitespace-pre-wrap '><pre>{item?.codeString}</pre></div>
+       <div className='w-full '>
+      <pre className='mt-8 text-black w-[100%] whitespace-pre-wrap font-serif'>{item?.explanation}</pre>
+      </div>
+      
        </>
 
     ))}
