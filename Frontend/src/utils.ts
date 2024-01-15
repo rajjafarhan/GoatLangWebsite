@@ -45,6 +45,41 @@ export const links = [
       title: "Function",
       path: "/handbook/handbook-content/function",
     },
+    ,
+    {
+      id: "9",
+      title: "Classes",
+      path: "/handbook/handbook-content/classes",
+    },
+    ,
+    {
+      id: "10",
+      title: "polymorphism",
+      path: "/handbook/handbook-content/polymorphism",
+    },,
+    {
+      id: "11",
+      title: "Inheritance",
+      path: "/handbook/handbook-content/Inheritance",
+    },,
+    {
+      id: "12",
+      title: "Encapsulation",
+      path: "/handbook/handbook-content/Encapsulation",
+    },
+    ,
+    {
+      id: "13",
+      title: "Abstraction",
+      path: "/handbook/handbook-content/Abstraction",
+    },
+    ,
+    {
+      id: "14",
+      title: "Interface",
+      path: "/handbook/handbook-content/Interface",
+    },
+  
   ];
 
   export const hanbookContent = [
@@ -401,7 +436,98 @@ export const links = [
             explanation: "Functions have their own scope. Variables defined inside a function are local to that function, unless explicitly declared as global."
         }
     ]
+},{
+    id: "9",
+    title: "Classes",
+    path: 'classes',
+    content: {
+        desc: "This part of GoatLang is under development and will be released shortly. Stay tuned to explore the variety of data types that will be supported in GoatLang to represent different kinds of values.",
+    },
+    code: [
+        {
+            head: "",
+            codeString: "//coming soon",
+            
+        }
+        // Repeat the structure for each data type you initially intended to cover
+    ]
+},{
+    id: "10",
+    title: "polymorphism",
+    path: 'polymorphism',
+    content: {
+        desc: "This part of GoatLang is under development and will be released shortly. Stay tuned to explore the variety of data types that will be supported in GoatLang to represent different kinds of values.",
+    },
+    code: [
+        {
+            head: "",
+            codeString: "//coming soon",
+            
+        }
+        // Repeat the structure for each data type you initially intended to cover
+    ]
+},{
+    id: "11",
+    title: "Inheritance",
+    path: 'Inheritance',
+    content: {
+        desc: "This part of GoatLang is under development and will be released shortly. Stay tuned to explore the variety of data types that will be supported in GoatLang to represent different kinds of values.",
+    },
+    code: [
+        {
+            head: "",
+            codeString: "//coming soon",
+            
+        }
+        // Repeat the structure for each data type you initially intended to cover
+    ]
+},{
+    id: "12",
+    title: "Encapsulation",
+    path: 'Encapsulation',
+    content: {
+        desc: "This part of GoatLang is under development and will be released shortly. Stay tuned to explore the variety of data types that will be supported in GoatLang to represent different kinds of values.",
+    },
+    code: [
+        {
+            head: "",
+            codeString: "//coming soon",
+            
+        }
+        // Repeat the structure for each data type you initially intended to cover
+    ]
+},{
+    id: "13",
+    title: "Abstraction",
+    path: 'Abstraction',
+    content: {
+        desc: "This part of GoatLang is under development and will be released shortly. Stay tuned to explore the variety of data types that will be supported in GoatLang to represent different kinds of values.",
+    },
+    code: [
+        {
+            head: "",
+            codeString: "//coming soon",
+            
+        }
+        // Repeat the structure for each data type you initially intended to cover
+    ]
+},{
+    id: "14",
+    title: "Interface",
+    path: 'Interface',
+    content: {
+        desc: "This part of GoatLang is under development and will be released shortly. Stay tuned to explore the variety of data types that will be supported in GoatLang to represent different kinds of values.",
+    },
+    code: [
+        {
+            head: "",
+            codeString: "//coming soon",
+            
+        }
+        // Repeat the structure for each data type you initially intended to cover
+    ]
 }
+
 
     
   ]
