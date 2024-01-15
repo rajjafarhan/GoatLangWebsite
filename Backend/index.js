@@ -1,9 +1,12 @@
 import express from 'express';
 import cors from 'cors';
-
+import { generateJsCode } from '../../lang/src/Execution/main.js';
 // import { tokenize } from './lang/src/tokenization/tokenize.js';
-// import { generateAst } from './lang/src/parsing/ast.js';
-import { generateAst,codeTokenizer } from 'goat-code';
+import { tokenize } from '../../lang/src/tokenization/tokenize.js';
+import { generateAst } from '../../lang/src/Parsing/ast.js';
+// import { getTAC } from '../../lang/src/Parsing/ast.js';
+import { GetTAC } from '../../lang/src/Execution/main.js';
+// import { GetTAC } from 'goat-code';
 
 import generate from '@babel/generator';
 import { node } from 'compile-run';
@@ -231,6 +234,17 @@ function traverseBFS (jsonTree) {
             delete queue[0].value
             queue.shift()
         }
+        else if (queue[0].type === "WhileStatement"){
+            res.push(queue[0].type)
+            queue.push(queue[0].test)
+            queue.push(queue[0].body)
+            queue[0].name = queue[0].type
+            queue[0].children = [queue[0].test,  queue[0].body]
+            delete queue[0].type
+            delete queue[0].test
+            delete queue[0].body
+            queue.shift()
+        }
         else if (queue[0].type === "ForStatement"){
             res.push(queue[0].type)
             queue.push(queue[0].init)
@@ -256,27 +270,52 @@ app.get("/",(req,res)=>{
 
 app.post('/', async (req, res) => {
   try {
-    const code = req.body.formatedCodeInput;
+    const codee = req.body.formatedCodeInput;
 
     // Tokenize the code
-    const generatedTokens = await codeTokenizer(code);
+    // const generatedTokens = await codeTokenizer(code);
+    // const a = tokenize(codee)
+    // const b = generateAst(a)
+    // const c = generate.default(b).code
+    const [tokens, astt, code] = GetTAC(codee)
+    // console.log(tokens, astt, code);
+
+
+    // const [tokens, ast, code] = GetTAC(codee)
 
     // Generate Abstract Syntax Tree (AST)
-    let ast = await generateAst(generatedTokens);
+    // let ast = await generateAst(generatedTokens);
 
     // Convert AST to JavaScript code
-    let jsCode = generate.default(ast).code;
+    // let jsCode = generate.default(ast).code;
 
     // Example: Running a simple JavaScript code using compile-run
-    
-    const result = await node.runSource(jsCode);
+//     const jsCodee = generateJsCode(code)
+
+// fs.writeFileSync('./temp.js', jsCodee)
+
+// // const destPath = path.join(process.cwd(), './temp.js')
+// import("./temp.js")
+//     .catch((error) => {
+//         console.error("Opsss Error! ",error.message)
+//     })
+//     .finally(() => {
+//         fs.unlinkSync('./temp.js')
+//     })
+
+
+
+    const result = await node.runSource(code);
     const final = result.stdout  ;
-    // const astree = traverseBFS(ast)
+    console.log(final);
+    const astree = traverseBFS(astt)
     // console.log("as",astree);
+    
+    const jsCode = code;
+    const ast = astt
+//    console.log(c);
 
-   
-
-    res.status(200).send({ jsCode, final,ast,message:"aa" });
+    res.status(200).send({ jsCode, astree, final,ast,message:"aa" });
   } catch (error) {
     // Handle errors and send a meaningful response
     const { message, stack, name } = error;
