@@ -12,30 +12,6 @@ const SideMenu = ({parentHeight}:{parentHeight:number}) => {
   
   
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      if(offset > 892){
-        setIsFixed(true)
-        setCheck(true)
-      }else if(offset > 66){
-        setIsFixed(true)
-        setCheck(false)
-      }else if(offset < 66){
-        setIsFixed(false)
-        setCheck(false)
-      }
-      // setIsFixed(offset > 66);
-      
-     
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   // console.log(parentHeight)
   const activeLink = ({ isActive }: { isActive: boolean }) =>
   isActive ? {borderRight: "4px solid #115e59" }: {};
