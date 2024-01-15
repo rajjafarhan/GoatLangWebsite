@@ -1,12 +1,12 @@
 import express from 'express';
 import cors from 'cors';
-import { generateJsCode } from '../../lang/src/Execution/main.js';
+// import { generateJsCode } from '../../lang/src/Execution/main.js';
 // import { tokenize } from './lang/src/tokenization/tokenize.js';
-import { tokenize } from '../../lang/src/tokenization/tokenize.js';
-import { generateAst } from '../../lang/src/Parsing/ast.js';
+// import { tokenize } from '../../lang/src/tokenization/tokenize.js';
+// import { generateAst } from '../../lang/src/Parsing/ast.js';
 // import { getTAC } from '../../lang/src/Parsing/ast.js';
-import { GetTAC } from '../../lang/src/Execution/main.js';
-// import { GetTAC } from 'goat-code';
+// import { GetTAC } from '../../lang/src/Execution/main.js';
+import { GetTAC } from 'goat-code';
 
 import generate from '@babel/generator';
 import { node } from 'compile-run';
