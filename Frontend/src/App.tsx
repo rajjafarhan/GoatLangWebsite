@@ -3,6 +3,7 @@ import './App.css'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Docs from './pages/Docs'
+import Downloads from './pages/Downloads'
 
 import Home from './pages/Home'
 import Handbook from './pages/Handbook'
@@ -21,6 +22,7 @@ function App() {
       <Route path="/docs" element={<Docs />} />
       <Route path="/handbook/*" element={<Handbook />} />
       <Route path="/feedback" element={<FeedBack/>} />
+      <Route path="/downloads" element={<FeedBack/>} />
       <Route path="/Playground/*" element={<Playground />} />
     </Routes>
     

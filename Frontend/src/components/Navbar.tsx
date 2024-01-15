@@ -9,11 +9,8 @@ const Navbar = () => {
             <Link to='/' className="font-bold text-xl">GoatLang</Link>
           </div>
           <div className="hidden md:flex">
-            <Link to="#" className="mx-2">
+            <Link to="https://www.npmjs.com/package/goat-code" className="mx-2">
               Download
-            </Link>
-            <Link to="./docs" className="mx-2">
-              Docs
             </Link>
             <Link to="/handbook/handbook-content/variables" className="mx-2">
               Handbook
