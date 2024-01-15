@@ -31,7 +31,8 @@ const Footer = () => {
                   <li><Link to="/handbook/handbook-content/datatypes" className="underline">Data Types</Link></li>
                   <li><Link to="/handbook/handbook-content/variables" className="underline">Variable</Link></li>
                   <li><Link to="/handbook/handbook-content/function" className="underline">Functions</Link></li>
-                  <li><Link to="/handbook/handbook-content/ifelse" className="underline">Conditional Statements</Link></li>
+                  <li><Link to="/handbook/handbook-content/ifelse" className="underline">Conditional Statements</Link>
+                  </li>
                 </ul>
               </div>
     
