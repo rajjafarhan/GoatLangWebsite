@@ -1,11 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import {  useRef, useState } from "react";
 import Editor from '@monaco-editor/react';
 import Modal from "../components/Modal";
-
-// i = 1 until(i < 4){display(i) i=i+1}
-
-
-
 
 const Playground = () => {
   const editorRef = useRef(null);
@@ -31,7 +26,7 @@ const showValue = async () => {
   const formatedCodeInput = formatCodeToSingleLine(codee);
 
   try {
-    const response = await fetch('https://goat-lang-website-backend-9e282dam5.vercel.app/', {
+    const response = await fetch('https://goat-lang-website-backend.vercel.app/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -49,19 +44,14 @@ const showValue = async () => {
     } else {
       
       const { jsCode, astree,final,ast, message  } = await response.json();
-      // const {  ast } = await response.json();
-      
-      // astree = ast
       setAstree(astree)      
       setEr('')
       setOp(final);
     }
   } catch (error) {
-
     console.error("Error in catch:", error);
   }
 };
-
 
   return (
     <>
@@ -128,7 +118,6 @@ const showValue = async () => {
           ],
           colors: {
             "editor.foreground": "#376eff",
-            // "editor.background": "#EDF9FA",
             "editorLineNumber.foreground": "#008000",
           },
           });
@@ -164,9 +153,9 @@ const showValue = async () => {
             <span className="blink font-extrabold">{"_"}</span>
             </pre>
               )
-              : <i className="text-gray-400">//Your code will be displayed here</i>
+              : <i className="text-gray-400">//The output will be displayed here</i>
             )}
-          
+
         </div>
       </div>
     </div>
