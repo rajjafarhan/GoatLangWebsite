@@ -7,6 +7,8 @@ import cors from 'cors';
 // import { getTAC } from '../../lang/src/Parsing/ast.js';
 // import { GetTAC } from '../../lang/src/Execution/main.js';
 import { GetTAC } from 'goat-code';
+import axios  from'axios';
+
 
 import generate from '@babel/generator';
 import { node } from 'compile-run';
@@ -272,6 +274,11 @@ app.post('/', async (req, res) => {
   try {
     const codee = req.body.formatedCodeInput;
 
+
+
+
+   
+
     // Tokenize the code
     // const generatedTokens = await codeTokenizer(code);
     // const a = tokenize(codee)
@@ -305,11 +312,37 @@ app.post('/', async (req, res) => {
 
 
 
-    const result = await node.runSource(code);
-    const final = result.stdout  ;
-    console.log(final);
+    // const result = await node.runSource(code);
+    // const final = result.stdout  ;
+    // console.log(final);
     const astree = traverseBFS(astt)
     // console.log("as",astree);
+    let final
+    const options = {
+  method: 'POST',
+  url: 'https://online-code-compiler.p.rapidapi.com/v1/',
+  headers: {
+    'content-type': 'application/json',
+    'X-RapidAPI-Key': '093fb6c721msh07cc788b0a09003p1b7268jsnb08416c0fa3d',
+    'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
+  },
+  data: {
+    language: 'nodejs',
+    version: 'latest',
+    code: code,
+    input: null
+  }
+};
+
+ try {
+        const response = await axios.request(options);
+        // console.log(response.data.output);
+        final = response.data.output
+    } catch (error) {
+        console.error(error);
+    }
+
+
     
     const jsCode = code;
     const ast = astt
