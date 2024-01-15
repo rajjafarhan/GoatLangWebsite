@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="flex items-center  justify-between w-full ">
         <div className="flex items-center">
           <div className="mr-6">
-            <span className="font-bold text-xl">GoatLang</span>
+            <Link to='/' className="font-bold text-xl">GoatLang</Link>
           </div>
           <div className="hidden md:flex">
             <Link to="#" className="mx-2">
@@ -18,7 +18,7 @@ const Navbar = () => {
             <Link to="/handbook/handbook-content/variables" className="mx-2">
               Handbook
             </Link>
-            <Link to="#" className="mx-2">
+            <Link to="/feedback" className="mx-2">
               Feedback
             </Link>
             <Link to="/playground" className="mx-2">

@@ -7,6 +7,7 @@ import Docs from './pages/Docs'
 import Home from './pages/Home'
 import Handbook from './pages/Handbook'
 import Playground from './pages/Playground'
+import FeedBack from './pages/Feedback'
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/docs" element={<Docs />} />
       <Route path="/handbook/*" element={<Handbook />} />
-      <Route path="/Playground*" element={<Playground />} />
+      <Route path="/feedback" element={<FeedBack/>} />
+      <Route path="/Playground/*" element={<Playground />} />
     </Routes>
     
     <Footer/>

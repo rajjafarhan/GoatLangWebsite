@@ -51,8 +51,8 @@ export const links = [
         id: "1",
         title: "Variables",
         path:'variables',
-        content:{desc:"In Goatlang, variables serve as containers for storing and manipulating data. Let's unravel the basics of working with variables in this caprine-inspired language.",
-      h1:"Declaration"},
+        content:{desc:"In Goatlang, variables serve as containers for storing and manipulating data. Let's unravel the basics of working with variables in this caprine-inspired language." ,
+         h1:"Declaration and Initialization"},
         code : [
             {
               head:"Local Scope",  
@@ -61,19 +61,31 @@ export const links = [
             },
             {
               head:"Global Scope",
-              codeString:"global const a = 1;",
+              codeString:"global const a = 1",
               explanation:"For global scope, use the global keyword before declaring the variable.By prefixing with global, you extend the variable's scope to the entire program, making it accessible from anywhere"
               
             },
             {
               head:"Constants",
-              codeString:"const pi = 3.14; ",
+              codeString:"const pi = 3.14 ",
               explanation:"Declare constants using the const keyword. Constants cannot be changed once assigned."
               
             },{
               head:"Data Types",
-              codeString:"var age = 3   //integer \nvar weight = 42.5  // float \nvar name = 'Billy' " ,
+              codeString:"age = 3        //integer \nweight = 42.5  // float \nname = 'Billy' //string " ,
               explanation:"Declare constants using the const keyword. Constants cannot be changed once assigned."
+              
+            },
+            {
+              head:"Initialization",
+              codeString:"goatCount = 5 " ,
+              explanation:"Variables can be initialized at the time of declaration or later in the code."
+              
+            },
+            {
+              head:"Variable Naming",
+              codeString:"1stPlace = 'Invalid'  // Incorrect naming \nfrom = 'Invalid'  //'from' is a reserved keyword" ,
+              explanation:"* Do not start variable names with a number or special character.\n* Avoid using reserved keywords as variable names."
               
             }
             
@@ -140,5 +152,40 @@ export const links = [
 
       ]
   },
+  {
+      id: "5",
+      title: "While Loop",
+      path:'whileloop',
+      content:{desc:"The `while` loop in Goatlang is used to repeatedly execute a block of code as long as a specified condition is true. Here's the basic syntax:"},
+      code : [
+          {
+              codeString:"i = 0  // Initialize a variable \nuntil (i < 10) \n{ \ni = i + 1 \ndisplay(i) \n}",
+              explanation:"In the provided syntax, initialize a loop control variable before the until keyword, and the loop will continue executing the enclosed code as long as the defined condition holds true. For instance, consider initializing a variable i to 0 and incrementing it until reaching 10. The until keyword signifies the beginning of the loop, and within the loop block, you can employ any valid Goatlang expressions. Be cautious to set a well-defined condition to prevent infinite loops. Utilize the while loop when you need to iteratively perform a task until a specific condition is satisfied. \nMake sure to update the loop condition appropriately for your specific use case. The loop will exit when the condition evaluates to false."
+          }
+      ]
+  },
+  {
+    id: "6",
+    title: "If Else",
+    path:'ifelse',
+    content:{desc:"The if-else statement in Goatlang enables conditional execution, allowing the program to follow different paths based on specified conditions. This construct enhances the flexibility of your code, making it responsive to varying scenarios \nWith if-else, you can create divergent code branches, executing specific blocks when conditions are met and alternate blocks when conditions are not satisfied. This facilitates decision-making within your Goatlang programs, providing a way to handle different cases dynamically. \nThe elf keyword extends this functionality by allowing the inclusion of multiple conditions, enhancing the language's capability to express complex decision trees. By using elf, you can streamline your code and improve its readability, making it easier to manage multiple scenarios within a single if-else structure. Explore the examples provided to understand how to effectively implement if-else and elf in your Goatlang programs"},
+    code : [
+        {
+          head:"Syntax for basic if-else statement" , 
+          codeString:"if (age > 18) \n{  \ndisplay('You are an adult.') \n} \nelse \n{ \ndisplay('You are a minor.') \n}",
+          
+        },
+        {
+          head:"Multiple conditions with ' elf ' keyword" , 
+          codeString:"if (condition1) \n{  \n   //Code for Condition1 \n} \nelf (condition2) \n{ \n   // Code for condition2 \n} elf (condition3) \n{ \n   // Code for condition3 \n} else \n{ \n   // Code to execute when none of the conditions are true \n}",
+          explanation:"This code snippet represents a versatile conditional structure in Goatlang. It begins with an initial 'if' condition (condition1), followed by alternative 'elf' conditions (condition2 and condition3), each with specific code blocks. The 'else' block contains code to execute when none of the preceding conditions are true. This construct allows for a multi-branch decision-making process, accommodating different scenarios based on the fulfillment of various conditions."
+        },
+        {
+          head:"Nested if Statements",
+          codeString:"if (age > 18) \n{ \n   display('You are an adult.') \n   if (income > 30000) \n   { \n      display('You have a higher income.') \n   } \n   else \n   { \n      display('You have a lower income.') \n   } \n} \nelse \n{ \n   display('You are a minor.') \n}",
+          explanation:"Nested 'if' statements in Goatlang provide a way to evaluate multiple conditions in a hierarchical manner. Each 'if' statement inside another is known as a nested 'if,' and it allows for intricate decision-making"
+        }
+    ]
+},
     
   ]
