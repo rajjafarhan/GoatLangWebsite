@@ -1,11 +1,10 @@
 import express from 'express';
 import cors from 'cors';
 
-import { tokenize } from '../../lang/src/tokenization/tokenize.js';
-import { generateAst } from '../../lang/src/parsing/ast.js';
-
 // import { tokenize } from './lang/src/tokenization/tokenize.js';
 // import { generateAst } from './lang/src/parsing/ast.js';
+import { generateAst,codeTokenizer } from 'goat-code';
+
 import generate from '@babel/generator';
 import { node } from 'compile-run';
 const port = 3000;
@@ -260,7 +259,7 @@ app.post('/', async (req, res) => {
     const code = req.body.formatedCodeInput;
 
     // Tokenize the code
-    const generatedTokens = await tokenize(code);
+    const generatedTokens = await codeTokenizer(code);
 
     // Generate Abstract Syntax Tree (AST)
     let ast = await generateAst(generatedTokens);
@@ -272,10 +271,12 @@ app.post('/', async (req, res) => {
     
     const result = await node.runSource(jsCode);
     const final = result.stdout  ;
-    const astree = traverseBFS(ast)
+    // const astree = traverseBFS(ast)
+    // console.log("as",astree);
 
+   
 
-    res.status(200).send({ jsCode, final,ast,astree });
+    res.status(200).send({ jsCode, final,ast,message:"aa" });
   } catch (error) {
     // Handle errors and send a meaningful response
     const { message, stack, name } = error;

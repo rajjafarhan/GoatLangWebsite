@@ -55,28 +55,9 @@ export const links = [
       h1:"Declaration"},
         code : [
             {
-              head:"Local Scope",  
-              codeString:"a = 1",
-                explanation:"Here, the variable a is limited to the local scope, accessible within its defined context."
-            },
-            {
-              head:"Global Scope",
-              codeString:"global const a = 1;",
-              explanation:"For global scope, use the global keyword before declaring the variable.By prefixing with global, you extend the variable's scope to the entire program, making it accessible from anywhere"
-
-            },
-            {
-              head:"Constants",
-              codeString:"const pi = 3.14; ",
-              explanation:"Declare constants using the const keyword. Constants cannot be changed once assigned."
-
-            },{
-              head:"Data Types",
-              codeString:"var age = 3   //integer \nvar weight = 42.5  // float \nvar name = 'Billy' " ,
-              explanation:"Declare constants using the const keyword. Constants cannot be changed once assigned."
-
+                codeString:"",
+                explanation:""
             }
-
         ]
     },
     {
