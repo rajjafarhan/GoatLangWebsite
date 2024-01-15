@@ -1,7 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import { hanbookContent } from '../utils';
-
 const HandBookContent = () => {
   const cardStyle = {
     backgroundColor: "#ffffff",
@@ -11,7 +10,7 @@ const HandBookContent = () => {
   const { id } = useParams();
   const content = hanbookContent.find((content) => content.path===id)
 
- 
+
 
   return (
 
@@ -37,12 +36,12 @@ const HandBookContent = () => {
        </>
 
     ))}
-    
-   
- 
+
+
+
 
     </div>
-  
+
   );
 }
 
