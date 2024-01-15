@@ -48,11 +48,11 @@ const showValue = async () => {
       setOp('')
     } else {
       
-      const { jsCode, final,ast, message } = await response.json();
+      const { jsCode, astree,final,ast, message  } = await response.json();
       // const {  ast } = await response.json();
       
       // astree = ast
-      // setAstree(astree)      
+      setAstree(astree)      
       setEr('')
       setOp(final);
     }
