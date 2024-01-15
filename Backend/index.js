@@ -25,10 +25,7 @@ app.use(express.static('public'));
 
 // Enable CORS with specific options
 app.use(
-  cors({
-    origin: '*',
-    credentials: true,
-  })
+  cors()
 );
 
 function traverseBFS (jsonTree) {

@@ -31,7 +31,7 @@ const showValue = async () => {
   const formatedCodeInput = formatCodeToSingleLine(codee);
 
   try {
-    const response = await fetch('http://localhost:3000', {
+    const response = await fetch('https://goat-lang-website-backend-9e282dam5.vercel.app/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
