@@ -21,9 +21,7 @@ const Navbar = () => {
             <Link to="/playground" className="mx-2">
               Playground
             </Link>
-            <Link to="#" className="mx-2">
-              Tools
-            </Link>
+          
           </div>
         </div>
         <div className="flex items-center gap-4 md:w-[30%] ">

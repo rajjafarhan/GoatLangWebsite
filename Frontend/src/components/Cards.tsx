@@ -34,7 +34,7 @@ const Cards = ({ bgColor, borderColor }: cardsProps) => {
           </Link>
           </div>
           <div className="ml-4 pt-44">
-            <FaChevronRight size={30} />
+            <FaChevronRight color="white" size={30} />
           </div>
         </div>
 
