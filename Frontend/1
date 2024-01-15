@@ -1,10 +1,4 @@
 export const links = [
-
-    {
-      id: "0",
-      title: "Data Types",
-      path: "/handbook/handbook-content/datatypes",
-    },
     {
       id: "1",
       title: "Variables",
@@ -37,69 +31,22 @@ export const links = [
     },
     {
       id: "7",
-      title: "Display statement", 
-      path: "/handbook/handbook-content/display",
+      title: "Switch Statement",
+      path: "/handbook/handbook-content/switch",
     },
     {
       id: "8",
       title: "Function",
       path: "/handbook/handbook-content/function",
     },
+    {
+      id: "9",
+      title: "Button 6",
+      path: "/handbook/handbook-content/button6",
+    },
   ];
 
   export const hanbookContent = [
-      {
-    id: "0",
-    title: "Data Types",
-    path: 'datatypes',
-    content: {
-        desc: "Goatlang supports a variety of data types to represent different kinds of values. Let's explore the common data types and how they are used in this caprine-inspired language.",
-        h1: "Common Data Types"
-    },
-    code: [
-        {
-            head: "Number",
-            codeString: "age = 3",
-            explanation: "The 'Number' data type represents numeric values. Here, 'age' is assigned the value 3."
-        },
-        {
-            head: "String",
-            codeString: "name = 'GoatLang'",
-            explanation: "The 'String' data type represents textual data. Here, 'name' is assigned the string 'GoatLang'."
-        },
-        {
-            head: "Boolean",
-            codeString: "isCaprine = true",
-            explanation: "The 'Boolean' data type represents true or false values. Here, 'isCaprine' is assigned the value 'true'."
-        },
-        {
-            head: "Array",
-            codeString: "numbers = [1, 2, 3, 4, 5]",
-            explanation: "The 'Array' data type represents an ordered list of values. Here, 'numbers' is an array containing the numbers 1 through 5."
-        },
-        {
-            head: "Object",
-            codeString: "person = { name: 'Bob', age: 25 }",
-            explanation: "The 'Object' data type represents a collection of key-value pairs. Here, 'person' is an object with 'name' and 'age' properties."
-        },
-        {
-            head: "Null",
-            codeString: "nullValue = null",
-            explanation: "The 'null' data type represents the absence of a value. Here, 'nullValue' is assigned the value 'null'."
-        },
-        {
-            head: "Undefined",
-            codeString: "undefinedValue = undefined",
-            explanation: "The 'undefined' data type represents an uninitialized or undefined value. Here, 'undefinedValue' is assigned the value 'undefined'."
-        },
-        {
-            head: "Function",
-            codeString: "fun greet() {\n    display('Baa, hello!')\n}",
-            explanation: "The 'Function' data type represents a callable block of code. Here, 'greet' is a function that displays a greeting message."
-        },
-    ]
-}
-      ,
     {
         id: "1",
         title: "Variables",
@@ -207,6 +154,11 @@ export const links = [
             codeString: "person.sayHello = function() { return 'Baa, hello!' }",
             explanation: "In GoatLang, objects can have methods (functions as properties). Here, 'sayHello' is a method of the 'person' object."
         },
+        {
+            head: "Object Destruction",
+            codeString: "delete person.city",
+            explanation: "To remove a property from an object, use the 'delete' keyword. This deletes the 'city' property from the 'person' object."
+        }
     ]
 }
 ,
@@ -243,53 +195,17 @@ export const links = [
       ]
   },
   {
-    id: "5",
-    title: "While Loop",
-    path: 'whileloop',
-    content: {
-        desc: "In Goatlang, the 'while' loop allows you to repeatedly execute a block of code as long as a specified condition is true. Let's explore the usage and syntax of 'while' loops in this caprine-inspired language.",
-        h1: "Basic Structure and Usage"
-    },
-    code: [
-        {
-            head: "Initializing a Variable",
-            codeString: "i = 0",
-            explanation: "Before entering the 'while' loop, you often need to initialize a variable. Here, 'i' is initialized to 0."
-        },
-        {
-            head: "While Loop Syntax",
-            codeString: "until (i < 10) {\n    i = i + 1\n    display(i)\n}",
-            explanation: "The 'until' keyword is used to start a 'while' loop, followed by the condition in parentheses. The code inside the curly braces will be executed as long as the condition is true."
-        },
-        {
-            head: "Loop Condition",
-            codeString: "i < 10",
-            explanation: "The condition inside the parentheses determines when the 'while' loop should continue executing. In this case, the loop continues as long as 'i' is less than 10."
-        },
-        {
-            head: "Updating the Variable",
-            codeString: "i = i + 1",
-            explanation: "Within the 'while' loop, you often need to update the variable that is part of the loop condition. Here, 'i' is incremented by 1 in each iteration."
-        },
-        {
-            head: "Displaying Output",
-            codeString: "display(i)",
-            explanation: "Here, the 'display' function is used to output the current value of 'i'. You can replace this with any code relevant to your use case."
-        },
-        {
-            head: "Loop Termination",
-            codeString: "// Loop terminates when i is no longer less than 10",
-            explanation: "The loop continues executing as long as the condition is true. In this example, it terminates when 'i' is no longer less than 10."
-        },
-        {
-            head: "Infinite Loop Caution",
-            codeString: "// Ensure the loop condition will eventually become false",
-            explanation: "Be cautious to avoid infinite loops. Ensure that the loop condition will eventually evaluate to false, or include a mechanism to break out of the loop."
-        }
-    ]
-}
-
-  ,
+      id: "5",
+      title: "While Loop",
+      path:'whileloop',
+      content:{desc:"The `while` loop in Goatlang is used to repeatedly execute a block of code as long as a specified condition is true. Here's the basic syntax:"},
+      code : [
+          {
+              codeString:"i = 0  // Initialize a variable \nuntil (i < 10) \n{ \ni = i + 1 \ndisplay(i) \n}",
+              explanation:"In the provided syntax, initialize a loop control variable before the until keyword, and the loop will continue executing the enclosed code as long as the defined condition holds true. For instance, consider initializing a variable i to 0 and incrementing it until reaching 10. The until keyword signifies the beginning of the loop, and within the loop block, you can employ any valid Goatlang expressions. Be cautious to set a well-defined condition to prevent infinite loops. Utilize the while loop when you need to iteratively perform a task until a specific condition is satisfied. \nMake sure to update the loop condition appropriately for your specific use case. The loop will exit when the condition evaluates to false."
+          }
+      ]
+  },
   {
     id: "6",
     title: "If Else",
@@ -313,95 +229,5 @@ export const links = [
         }
     ]
 },
-{
-    id: "7",
-    title: "Display Statements",
-    path: 'display',
-    content: {
-        desc: "In Goatlang, display statements are used to output information to the user or developer. Let's explore the different ways to display information in this caprine-inspired language.",
-        h1: "Usage and Syntax"
-    },
-    code: [
-        {
-            head: "Displaying Variables",
-            codeString: "name = 'GoatLang'\ndisplay(name)",
-            explanation: "The 'display' statement is used to output the value of a variable. Here, the value of the 'name' variable will be displayed."
-        },
-        {
-            head: "Concatenation",
-            codeString: "age = 3\ndisplay('The goat is ' + age + ' years old')",
-            explanation: "You can concatenate strings and variables within the 'display' statement. This is useful for creating dynamic output."
-        },
-        {
-            head: "Multiple Parameters",
-            codeString: "height = 1.2\ndisplay('Height:', height, 'm')",
-            explanation: "The 'display' statement can take multiple parameters, separating them with commas. Each parameter will be displayed in order."
-        },
-        {
-            head: "String Literals",
-            codeString: "display('Hello, world!')",
-            explanation: "You can directly display string literals using the 'display' statement. This is useful for fixed text or messages."
-        },
-        {
-            head: "Expression Evaluation",
-            codeString: "result = 5 * 7\ndisplay('The result is:', result)",
-            explanation: "Expressions can be evaluated within the 'display' statement. Here, the result of the expression '5 * 7' will be displayed."
-        },
-        {
-            head: "Formatting Output",
-            codeString: "pi = 3.14159\ndisplay('Value of pi:', pi.toFixed(2))",
-            explanation: "You can format the output of numerical values using methods like 'toFixed'. Here, the value of 'pi' is displayed with two decimal places."
-        },
-        {
-            head: "Special Characters",
-            codeString: "display('Newline character: \\nTab character: \\t')",
-            explanation: "Special characters can be included in the 'display' statement. Here, the newline character '\\n' and tab character '\\t' are used."
-        }
-    ]
-}
-
-,
-{
-    id: "8",
-    title: "User-Defined Functions",
-    path: 'function',
-    content: {
-        desc: "In Goatlang, user-defined functions allow you to encapsulate a block of code for reusability. Let's delve into the details of defining and using functions in this caprine-inspired language.",
-        h1: "Function Declaration and Invocation"
-    },
-    code: [
-        {
-            head: "Creating Functions",
-            codeString: "fun greet(name) {\n    return 'Baa, hello ' + name + '!'\n}",
-            explanation: "Here, we define a function 'greet' that takes a parameter 'name' and returns a greeting message. The 'fun' keyword is used to declare a function."
-        },
-        {
-            head: "Function Invocation",
-            codeString: "message = greet('Alice')",
-            explanation: "To invoke a function, use its name followed by parentheses and provide any required arguments. The 'message' variable will contain the result of the 'greet' function."
-        },
-        {
-            head: "Parameters and Arguments",
-            codeString: "fun add(a, b) {\n    return a + b\n}\nresult = add(3, 5)",
-            explanation: "Functions can take parameters (inputs). In this example, the 'add' function takes two parameters 'a' and 'b', and returns their sum when invoked with arguments 3 and 5."
-        },
-        {
-            head: "Default Parameters",
-            codeString: "fun exponentiate(base, power=2) {\n    return base ** power\n}\nresult = exponentiate(3)",
-            explanation: "You can provide default values for parameters. If the 'power' parameter is not provided when invoking 'exponentiate', it defaults to 2."
-        },
-        {
-            head: "Return Statement",
-            codeString: "fun multiply(a, b) {\n    let result = a * b\n    return result\n}",
-            explanation: "The 'return' statement is used to specify the value that the function should return. Here, 'multiply' returns the product of 'a' and 'b'."
-        },
-        {
-            head: "Function Scope",
-            codeString: "let globalVar = 10\nfun printGlobalVar() {\n    print(globalVar)\n}\nprintGlobalVar()",
-            explanation: "Functions have their own scope. Variables defined inside a function are local to that function, unless explicitly declared as global."
-        }
-    ]
-}
-
     
   ]

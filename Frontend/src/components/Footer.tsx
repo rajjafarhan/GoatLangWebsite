@@ -6,12 +6,8 @@ const Footer = () => {
         <footer className="bg-teal-500 text-zinc-50 py-8">
           <div className="container mx-auto">
             {/* Custom Component */}
-            <div className="mb-4">
-              <Cards bgColor='bg-teal-500'/>
-            </div>
             
             {/* Horizontal Line */}
-            <hr className="border-b-2 border-zinc-50 mb-4" />
     
             {/* Four Columns */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
