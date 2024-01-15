@@ -23,7 +23,7 @@ const HandBookContent = () => {
     {content?.content.desc}
     </p>
     <h1 className='text-black text-3xl mt-2 '>{content?.content.h1}</h1>
-    <h2 className='text-black mt-4 text-2xl '>{content?.content.h1a}</h2>
+    <h2 className='text-black mt-4 text-2xl '>{content?.content.h1}</h2>
     
     {content?.code.map((item , index)=>(
       <>

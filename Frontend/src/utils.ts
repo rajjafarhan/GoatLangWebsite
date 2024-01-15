@@ -83,13 +83,62 @@ export const links = [
         id: "2",
         title: "Array",
         path:'array',
-        content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, dolor? Sunt voluptatibus iste obcaecati, possimus provident iusto porro a blanditiis repellat at velit quo eveniet deleniti itaque adipisci repudiandae et molestias animi laborum sed ullam. Quidem non dicta adipisci laudantium voluptates, impedit optio ipsam reiciendis mollitia, quisquam qui nesciunt distinctio quia exercitationem dolorum enim praesentium quibusdam, similique repudiandae hic vitae nam repellendus? Illum atque, possimus vel odio, eligendi vitae quos illo laborum, tempora error consequatur quibusdam molestiae id! Accusantium quam nisi necessitatibus debitis dolorem! Delectus, fugiat natus. Natus dolores, quis id ullam deserunt debitis asperiores vitae officia laborum explicabo minus cumque accusantium possimus laudantium non nostrum enim. Recusandae quasi rerum temporibus voluptatibus necessitatibus quae accusantium tempora modi, voluptates architecto at, magnam deserunt laborum id. Maxime harum aut sequi fugit dolores in accusantium tempora, vitae, ad assumenda beatae officia iste, voluptatibus doloribus dolor eligendi quo earum! Ut, vel? Odio excepturi dolore non nam, quis minus, labore totam alias possimus accusamus iusto eos accusantium ab illum at voluptas enim aliquid? Ut reiciendis aliquid quidem odit libero minima sit recusandae fugiat facere delectus et amet eum doloribus nobis, id provident voluptatum culpa? Velit aliquam harum distinctio nihil ratione aspernatur nobis reiciendis maiores, est sit, dolor pariatur tenetur, nesciunt iste earum incidunt sequi odit veniam! Quae nobis dolores perspiciatis dolore recusandae ullam nulla at, hic eveniet suscipit consequatur sequi? Sed nisi ipsum ipsa, soluta quisquam incidunt blanditiis libero tenetur, corporis corrupti molestias deserunt quidem sunt exercitationem laborum culpa magni voluptas distinctio tempore cupiditate possimus obcaecati! Impedit, repellat provident! Accusamus eveniet at provident libero exercitationem nisi vel nesciunt saepe temporibus, fuga sed nemo? Facere nobis porro eius fugit laboriosam, quisquam vel! Vel iure, ea eaque assumenda accusamus aspernatur sit animi accusantium, libero placeat quas totam nobis necessitatibus doloribus architecto nisi? Neque eos dolorum error explicabo, id unde ipsa corporis iusto vitae quisquam quia, aliquam officiis, dolorem magnam rem aperiam expedita hic veniam necessitatibus assumenda iure et. Amet totam voluptates, possimus at iste placeat non saepe quis quasi odio doloribus enim voluptate minima optio soluta. Nemo fugit beatae rerum totam consequatur, impedit repudiandae perspiciatis cupiditate temporibus ab, in excepturi porro cum! Veritatis autem, impedit suscipit laborum vero nulla nihil. Est aperiam, dignissimos iusto exercitationem pariatur animi incidunt numquam delectus quasi eum porro repellendus quas magnam. Similique harum maxime, possimus placeat deleniti voluptatem earum nulla dolorem adipisci unde omnis impedit quod? Sed exercitationem quo rerum error consequatur veritatis, facilis maxime at qui quia animi, deleniti nam cumque ea quasi possimus reiciendis debitis molestias a perferendis! Fugit in eos, eaque quam dolorem dicta porro! Molestiae, est fugit? Et totam laudantium voluptate magni voluptatum? Ipsam voluptatem molestias, fugit animi repellat expedita maiores repudiandae eius, doloribus velit, inventore in excepturi amet? Inventore ea cumque incidunt laborum? Sit debitis, incidunt cumque possimus asperiores quod reiciendis id. Itaque impedit, repudiandae rerum cumque, eius provident tempora natus ullam ratione delectus, maiores iste eaque omnis dolorem quaerat earum dolorum architecto voluptas id corrupti obcaecati consequuntur voluptatem? Odio similique labore ipsa tempore nesciunt ea voluptatem natus corrupti officiis illum! Ipsa saepe velit sit! Impedit asperiores, veritatis modi vero ratione consectetur? Nisi odit praesentium temporibus esse exercitationem vel numquam est tempora, tempore id neque. Nisi sed debitis ea nulla fugiat esse dolores, beatae quae consectetur, odit nihil, repellendus neque doloremque vero dolorum aspernatur magni quisquam sit temporibus cumque totam soluta? Incidunt, dignissimos quas. A est quas nulla sit officiis omnis qui quisquam tenetur, illum alias at placeat distinctio quos cupiditate voluptatum, similique optio! Nam voluptate dolores maxime, veritatis esse fugit incidunt, cupiditate quis omnis delectus impedit, quos ipsum tempora. Possimus a aspernatur provident, asperiores ducimus ab!",
+        content:{desc:"Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.",
+        h1:"GoatLang Array"},
         code : [
             {
-                codeString:"",
-                explanation:""
-            }
+                head:"Array Initialization",
+                codeString:"arr = [1,2,3];",
+                explanation:"To declare an array, specify the name of the array followed by using array literal to insert values in a comma-separated list, inside curly braces."
+            },
+            {
+              head:"Access the Elements of an Array",
+              codeString:"numbers = [1, 2, 3, 4, 5]; \nnumbers -> 0;",
+              explanation:"This statement accesses the value of the first element in numbers. You can access elements by referring to the index number. Remember that array indexes in Goat Lang start with 0, with numbers->0 representing the first element."
+            },
+            {
+              codeString:"numbers = [1, 2, 3, 4, 5]; \nnumbers -> (numbers.length-1);",
+              explanation:"This statement accesses the value of the element one less than the length of array."
+              
+            },
+            {
+              head:"Modifying an Array",
+              codeString:"numbers = [1, 2, 3, 4, 5]; \nnumbers -> 0 = 5;",
+              explanation:"This statement accesses the value of the first element in numbers and modifies its value from initial value 1 to final value 5. The value at the first index is updated."
+            },
         ]
     },
+    {
+      id: "4",
+      title: "For Loop",
+      path:'forloop',
+      content:{desc:"Loops can execute a block of code as long as a specified condition is reached.\nLoops are handy because they save time, reduce errors, and they make code more readable.",
+      h1:"Goat Lang For Loop"},
+      code : [
+          {
+              head:"Initialization",
+              codeString:"i = 0; \t//Initialize the index variable",
+              explanation:"In Goat Lang, before using a for loop it's essential to initialize the index variable. This is done outside the loop, typically before the loop structure."
+          },
+          {
+            head:"Loop Structure",
+            codeString:"for i from statement 1 to statement 2 by statement 3 { \n\t// Code to be executed in each iteration//  \n}",
+            explanation:"Here, from 0 to 2 by 1 indicates that the loop will iterate from 0 to 2 (inclusive) with a step size of 1. You can adjust these parameters based on your specific requirements."
+          },
+          
+          {
+            head:"Loop Example 1",
+            codeString:"i = 0; \t// Initialize the index variable \nfor i from 0 to 2 by 1 {\n\tdisplay(i); \n}",
+            explanation:"In this example, the loop will print the values 0, 1, and 2, as it iterates over the specified range with a step size of 1."
+          },
+          {
+            head:"Loop Example 2",
+            codeString:"i = 0; \nfor i from 0 to 5 by 1 {\n\tdisplay(i); \n} \n// Outputs: 0, 1, 2, 3, 4, 5",
+            explanation:"In this example, the loop will print the values 0, 1, and 2, as it iterates over the specified range with a step size of 1."
+          },
+
+
+      ]
+  },
     
   ]
