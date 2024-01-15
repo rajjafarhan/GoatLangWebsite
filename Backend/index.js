@@ -1,17 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-// import { generateJsCode } from '../../lang/src/Execution/main.js';
-// import { tokenize } from './lang/src/tokenization/tokenize.js';
-// import { tokenize } from '../../lang/src/tokenization/tokenize.js';
-// import { generateAst } from '../../lang/src/Parsing/ast.js';
-// import { getTAC } from '../../lang/src/Parsing/ast.js';
-// import { GetTAC } from '../../lang/src/Execution/main.js';
 import { GetTAC } from 'goat-code';
 import axios  from'axios';
-
-
-// import generate from '@babel/generator';
-// import { node } from 'compile-run';
 const port = 3000;
 
 const app = express();
@@ -28,6 +18,7 @@ app.use(
   cors()
 );
 
+//This function is used to visualize AST
 function traverseBFS (jsonTree) {
     let queue = [jsonTree]
 
@@ -276,77 +267,38 @@ app.post('/', async (req, res) => {
 
    
 
-    // Tokenize the code
-    // const generatedTokens = await codeTokenizer(code);
-    // const a = tokenize(codee)
-    // const b = generateAst(a)
-    // const c = generate.default(b).code
+    // Tokenize the code, generate AST and convert to JS
     const [tokens, astt, code] = GetTAC(codee)
-    // console.log(tokens, astt, code);
-
-
-    // const [tokens, ast, code] = GetTAC(codee)
-
-    // Generate Abstract Syntax Tree (AST)
-    // let ast = await generateAst(generatedTokens);
-
-    // Convert AST to JavaScript code
-    // let jsCode = generate.default(ast).code;
-
-    // Example: Running a simple JavaScript code using compile-run
-//     const jsCodee = generateJsCode(code)
-
-// fs.writeFileSync('./temp.js', jsCodee)
-
-// // const destPath = path.join(process.cwd(), './temp.js')
-// import("./temp.js")
-//     .catch((error) => {
-//         console.error("Opsss Error! ",error.message)
-//     })
-//     .finally(() => {
-//         fs.unlinkSync('./temp.js')
-//     })
-
-
-
-    // const result = await node.runSource(code);
-    // const final = result.stdout  ;
-    // console.log(final);
     const astree = traverseBFS(astt)
-    // console.log("as",astree);
     let final
     const options = {
-  method: 'POST',
-  url: 'https://online-code-compiler.p.rapidapi.com/v1/',
-  headers: {
-    'content-type': 'application/json',
-    'X-RapidAPI-Key': '093fb6c721msh07cc788b0a09003p1b7268jsnb08416c0fa3d',
-    'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
-  },
-  data: {
-    language: 'nodejs',
-    version: 'latest',
-    code: code,
-    input: null
-  }
-};
+        method: 'POST',
+        url: 'https://online-code-compiler.p.rapidapi.com/v1/',
+        headers: {
+            'content-type': 'application/json',
+            'X-RapidAPI-Key': '093fb6c721msh07cc788b0a09003p1b7268jsnb08416c0fa3d',
+            'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
+        },
+        data: {
+            language: 'nodejs',
+            version: 'latest',
+            code: code,
+            input: null
+        }
+    };
 
- try {
+    try {
         const response = await axios.request(options);
-        // console.log(response.data.output);
         final = response.data.output
     } catch (error) {
         console.error(error);
-    }
-
-
-    
+    }   
     const jsCode = code;
     const ast = astt
-//    console.log(c);
-
+    
     res.status(200).send({ jsCode, astree, final,ast,message:"aa" });
-  } catch (error) {
+  
+} catch (error) {
     // Handle errors and send a meaningful response
     const { message, stack, name } = error;
     res.status(500).send({ error: { message, stack, name } });
