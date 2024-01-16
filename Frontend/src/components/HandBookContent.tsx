@@ -1,4 +1,3 @@
-import React from 'react'
 import { useParams } from 'react-router-dom';
 import { hanbookContent } from '../utils';
 const HandBookContent = () => {
@@ -25,7 +24,7 @@ const HandBookContent = () => {
    
     
     {content?.code.map((item , index)=>(
-      <>
+      <div key={index}>
       <div className='text-black mt-8 text-2xl w-full'>{item?.head}</div>
      
        <div className='bg-neutral-200 text-black px-6 text-md w-[70%] py-4 mt-2 shadow-md shadow-neutral-400 whitespace-pre-wrap '><pre>{item?.codeString}</pre></div>
@@ -33,13 +32,9 @@ const HandBookContent = () => {
       <pre className='mt-8 text-black w-[100%] whitespace-pre-wrap font-serif'>{item?.explanation}</pre>
       </div>
       
-       </>
+       </div>
 
     ))}
-
-
-
-
     </div>
 
   );

@@ -1,7 +1,6 @@
 import  { useEffect, useState } from "react";
 import SideMenu from "../components/SideMenu";
 import HandBookContent from "../components/HandBookContent";
-import Check from "../components/Check";
 import { Route, Routes, useParams } from "react-router-dom";
 
 const Handbook = () => {

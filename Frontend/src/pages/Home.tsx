@@ -1,5 +1,3 @@
-import React from 'react'
-
 import HomeMain from '../components/HomeMain'
 import Editor from '../components/Editor'
 

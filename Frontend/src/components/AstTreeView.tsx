@@ -2,7 +2,7 @@ import  { useRef } from 'react'
 import '../App.css'
 import Tree from 'react-d3-tree'
 
-const AstTreeView = ({astree}) => {
+const AstTreeView = ({astree}:{astree:null}) => {
     const treeContainerRef = useRef(null)
 
   return (

@@ -7,11 +7,10 @@ import { Link } from "react-router-dom";
 
 type cardsProps = {
   bgColor?: string,
-  borderColor?: string
 }
 
 
-const Cards = ({ bgColor, borderColor }: cardsProps) => {
+const Cards = ({ bgColor}: cardsProps) => {
   return (
     <div className={`${bgColor ? bgColor : 'bg-[#faf9f8]'} px-12 pb-16 my-4 flex flex-col items-center `}>
       {/* Main Heading */}

@@ -6,10 +6,16 @@ const Navbar = () => {
       <div className="flex items-center  justify-between w-full ">
         <div className="flex items-center">
           <div className="mr-6">
-            <Link to='/' className="font-bold text-xl">GoatLang</Link>
+            <Link to="/" className="font-bold text-xl">
+              GoatLang
+            </Link>
           </div>
           <div className="hidden md:flex">
-            <Link to="https://www.npmjs.com/package/goat-code" className="mx-2">
+            <Link
+              to="https://www.npmjs.com/package/goat-code"
+              target="_blank"
+              className="mx-2"
+            >
               Download
             </Link>
             <Link to="/handbook/handbook-content/variables" className="mx-2">
@@ -21,7 +27,6 @@ const Navbar = () => {
             <Link to="/playground" className="mx-2">
               Playground
             </Link>
-          
           </div>
         </div>
         <div className="flex items-center gap-4 md:w-[30%] ">

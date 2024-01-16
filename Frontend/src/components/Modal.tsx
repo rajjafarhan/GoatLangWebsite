@@ -1,10 +1,16 @@
 import AstTreeView from "./AstTreeView";
 
-const Modal = ({ viewAst, setViewAst, astree }) => {
+type ModalType = {
+  viewAst: boolean;
+  setViewAst: React.Dispatch<React.SetStateAction<boolean>>;
+  astree: null;
+}
+const Modal = ({ viewAst, setViewAst, astree }:ModalType) => {
  
 
-  const clickedOutside = (e) => {
-    if (e.target.classList.contains('overlay')) {
+  const clickedOutside = (e:React.MouseEvent<HTMLDivElement>) => {
+    const targetElement = e.target as HTMLDivElement;
+    if (targetElement.classList.contains('overlay')) {
           setViewAst(false);
     }
   };

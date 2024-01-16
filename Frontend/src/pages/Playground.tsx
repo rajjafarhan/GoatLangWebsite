@@ -1,9 +1,10 @@
 import {  useRef, useState } from "react";
 import Editor from '@monaco-editor/react';
 import Modal from "../components/Modal";
+import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
 
 const Playground = () => {
-  const editorRef = useRef(null);
+  const editorRef = useRef<monaco.editor.IStandaloneCodeEditor | null>(null);
   const [op, setOp] = useState('');
   const [er, setEr] = useState('');
   const [astree, setAstree] = useState(null);
@@ -12,12 +13,12 @@ const Playground = () => {
   const [activeBtn, setActiveBtn] = useState('output');
 
 
-  function formatCodeToSingleLine(code) {
-    return code.replace(/\n/g, '').replace(/\s+/g, ' ');
-  }
+  // function formatCodeToSingleLine(code) {
+  //   return code.replace(/\n/g, '').replace(/\s+/g, ' ');
+  // }
 
 const showValue = async () => {
-  let codee = editorRef.current.getValue();
+  const codee = editorRef.current!.getValue();
   
   if (codee === "") {
     alert("Please write something");
@@ -38,14 +39,14 @@ const showValue = async () => {
     if (!response.ok) {
       const errorData = await response.json();
       console.error('Error from server:', errorData.error);
-      let a = errorData.error.stack;      
+      const a = errorData.error.stack;      
       const formattedStackTrace = a.replace(/\n/g, '\n');      
       setEr(formattedStackTrace);
       setOp('')
       setAstree(null)
     } else {
       
-      const { jsCode, astree,final,ast, message  } = await response.json();
+      const { astree,final  } = await response.json();
       setAstree(astree)      
       setEr('')
       setOp(final);
