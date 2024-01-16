@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { GetTAC } from 'goat-code';
+import { GetTAC,astToJs,Tokenizer,AstGenerator } from 'goat-code';
 import axios  from'axios';
 const port = 3000;
 
@@ -24,7 +24,10 @@ function traverseBFS (jsonTree) {
 
     let res = []
     while (queue.length){
-        if (queue[0].type === "Program"){
+        if(!queue[0]){
+            queue.shift()
+        }
+        else if (queue[0].type === "Program"){
             res.push(queue[0].type)
             queue.push(...queue[0].body)
             queue[0].children = queue[0].body
@@ -258,19 +261,58 @@ app.get("/",(req,res)=>{
     res.send("server is Running!")
 })
 
+// app.post('/', async (req, res) => {
+//   try {
+//     const codee = req.body.formatedCodeInput;
+//     // Tokenize the code, generate AST and convert to JS
+//     const [tokens, astt, code] = GetTAC(codee)
+//     const astree = traverseBFS(astt)
+//     let final
+//     const options = {
+//         method: 'POST',
+//         url: 'https://online-code-compiler.p.rapidapi.com/v1/',
+//         headers: {
+//             'content-type': 'application/json',
+//             'X-RapidAPI-Key': '093fb6c721msh07cc788b0a09003p1b7268jsnb08416c0fa3d',
+//             'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
+//         },
+//         data: {
+//             language: 'nodejs',
+//             version: 'latest',
+//             code: code,
+//             input: null
+//         }
+//     };
+
+//     try {
+//         const response = await axios.request(options);
+//         final = response.data.output
+//     } catch (error) {
+//         console.error(error);
+//     }   
+//     const jsCode = code;
+//     const ast = astt
+    
+//     res.status(200).send({ jsCode, astree, final,ast,message:"Success!" });
+  
+// } catch (error) {
+//     // Handle errors and send a meaningful response
+//     const { message, stack, name } = error;
+//     res.status(500).send({ error: { message, stack, name } });
+//   }
+// });
+
 app.post('/', async (req, res) => {
   try {
-    const codee = req.body.formatedCodeInput;
+    const codee = req.body.formatedCodeInput;   
+    // Tokenize the code, generate AST, and convert to JS
+    // const [tokens, astt, code] = GetTAC(codee);
+    const tokens = Tokenizer(codee)
+    const astt = AstGenerator(tokens)
+    const code = astToJs(astt)
+    const astree = traverseBFS(astt);
+    let final;
 
-
-
-
-   
-
-    // Tokenize the code, generate AST and convert to JS
-    const [tokens, astt, code] = GetTAC(codee)
-    const astree = traverseBFS(astt)
-    let final
     const options = {
         method: 'POST',
         url: 'https://online-code-compiler.p.rapidapi.com/v1/',
@@ -288,25 +330,31 @@ app.post('/', async (req, res) => {
     };
 
     try {
-        const response = await axios.request(options);
-        final = response.data.output
+      const response = await axios.request(options);
+      final = response.data.output;
     } catch (error) {
-        console.error(error);
-    }   
+      console.error(error);
+    }
+
     const jsCode = code;
-    const ast = astt
-    
-    res.status(200).send({ jsCode, astree, final,ast,message:"aa" });
+    const ast = astt;
+
+    res.status(200).send({ jsCode, astree, final, ast, message: "Success!" });
   
-} catch (error) {
-    // Handle errors and send a meaningful response
+  } catch (error) {
+    // Handle GetTAC is not a function
+    if (error.message === 'GetTAC is not a function or its return value is not iterable') {
     const { message, stack, name } = error;
-    res.status(500).send({ error: { message, stack, name } });
+      res.status(500).send({ error: { message: 'Internal server error: GetTAC is not a function',stack:"Internal server error: GetTAC is not a function\nThis indicates that there is an error in code!", name } });
+    } else {
+      // Handle other errors 
+      const { message, stack, name } = error;
+      res.status(500).send({ error: { message, stack, name } });
+    }
   }
 });
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
-
 
