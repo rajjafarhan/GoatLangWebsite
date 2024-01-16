@@ -1,5 +1,4 @@
 export const links = [
-
     {
       id: "0",
       title: "Data Types",
@@ -45,35 +44,32 @@ export const links = [
       title: "Function",
       path: "/handbook/handbook-content/function",
     },
-    ,
     {
       id: "9",
       title: "Classes",
       path: "/handbook/handbook-content/classes",
     },
-    ,
     {
       id: "10",
       title: "polymorphism",
       path: "/handbook/handbook-content/polymorphism",
-    },,
+    },
     {
       id: "11",
       title: "Inheritance",
       path: "/handbook/handbook-content/Inheritance",
-    },,
+    },
     {
       id: "12",
       title: "Encapsulation",
       path: "/handbook/handbook-content/Encapsulation",
     },
-    ,
+    
     {
       id: "13",
       title: "Abstraction",
       path: "/handbook/handbook-content/Abstraction",
     },
-    ,
     {
       id: "14",
       title: "Interface",

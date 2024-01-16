@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Search from "./Search";
 
 const Navbar = () => {
   return (
@@ -30,26 +31,8 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex items-center gap-4 md:w-[30%] ">
-          <input
-            type="text"
-            placeholder="Search"
-            className="w-[70%] bg-transparent border border-edf0f6 text-edf0f6 px-2  py-1 rounded"
-          />
-          <button className="focus:outline-none ">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-6 h-6"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-          </button>
+          
+          <Search />
         </div>
       </div>
     </nav>
