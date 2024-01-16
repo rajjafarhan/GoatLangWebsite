@@ -23,10 +23,11 @@ const showValue = async () => {
     alert("Please write something");
     return;
   }
-  const formatedCodeInput = formatCodeToSingleLine(codee);
+  // const formatedCodeInput = formatCodeToSingleLine(codee);
+  const formatedCodeInput = codee;
 
   try {
-    const response = await fetch('https://goat-lang-website-backend.vercel.app/', {
+    const response = await fetch('http://localhost:3000', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -41,6 +42,7 @@ const showValue = async () => {
       const formattedStackTrace = a.replace(/\n/g, '\n');      
       setEr(formattedStackTrace);
       setOp('')
+      setAstree(null)
     } else {
       
       const { jsCode, astree,final,ast, message  } = await response.json();

@@ -9,7 +9,7 @@ const AstTreeView = ({astree}) => {
     
      <>
             <div id="treeWrapper" ref={treeContainerRef} style={{ width: '100%', height: '100%'}}>
-                {astree?
+                {astree?(
                 <div>
                 <Tree
                     enableLegacyTransitions={true}
@@ -29,10 +29,12 @@ const AstTreeView = ({astree}) => {
                         y:20
                     }}
                 />
-                </div>
-                
-                
-                :null}
+                </div>)              
+                :
+                (<div className='justify-center flex items-center font-sans font-semibold'>
+                    <h4>You can visualize Ast only on a valid code snippet!</h4>
+                </div>)
+               }
             </div>
         </>
   )
