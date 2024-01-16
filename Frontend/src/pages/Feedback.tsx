@@ -3,28 +3,29 @@ import Post from '../components/Post';
 import PostForm from '../components/PostForm';
 import { FaPlus } from 'react-icons/fa';
 import FormModal from '../components/FormModal';
+import error1 from '../../pics/error1.png'
 
 
 interface PostData {
   title: string;
   content: string;
-  image: File | null;
+  image: File | string | null;
   comments: string[];
 }
 
 const FeedBack: React.FC = () => {
   const dummyPosts: PostData[] = [
     {
-      title: 'Sample Post 1',
-      content: 'This is the content of the first post.',
-      image: null,
-      comments: ['Comment 1', 'Comment 2'],
+      title: 'Code not Working',
+      content: 'I am tryping to run this conditional statement but it is not working',
+      image: error1,
+      comments: ['There are multiple errors in your code. You have not closed the if and else display statements with quotation marks. Second you have used == where as goatLang suports === as a comparision operator', 'You should be using === instead of =='],
     },
     {
-      title: 'Sample Post 2',
-      content: 'This is the content of the second post.',
+      title: 'How to download goatLang',
+      content: 'how to install goatLang',
       image: null,
-      comments: ['Comment 3', 'Comment 4'],
+      comments: ['To get started with GoatLang you should goto download button from there you can install its package', 'Download from this link-->  https://www.npmjs.com/package/goat-code '],
     },
    
   ];

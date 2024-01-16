@@ -5,7 +5,7 @@ import CommentSection from './CommentSection'
 interface PostProps {
   title: string;
   content: string;
-  image: File | null;
+  image: File | null | string;
   comments: string[];
   addComment: (comment: string) => void;
 }
@@ -17,12 +17,14 @@ const Post: React.FC<PostProps> = ({ title, content, image, comments, addComment
       <p className="mt-2">{content}</p>
       {image && (
         <div className="mt-4 h-[200px] sm:h-80 w-full flex justify-center items-center ">
-          <img src={URL.createObjectURL(image)} alt="Post" className="max-w-full h-full rounded-md" />
+          <img src={`${typeof(image) === 'string' ? image :  URL.createObjectURL(image)}`} alt="Post" className="max-w-full h-full rounded-md" />
         </div>
       )}
       <CommentSection comments={comments} addComment={addComment} />
     </div>
   );
 };
+
+//URL.createObjectURL(image)
 
 export default Post;
