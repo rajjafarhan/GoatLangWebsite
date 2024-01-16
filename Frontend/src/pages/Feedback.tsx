@@ -19,7 +19,7 @@ const FeedBack: React.FC = () => {
       title: 'Code not Working',
       content: 'I am tryping to run this conditional statement but it is not working',
       image: error1,
-      comments: ['There are multiple errors in your code. You have not closed the if and else display statements with quotation marks. Second you have used == where as goatLang suports === as a comparision operator', 'You should be using === instead of =='],
+      comments: ['To use == update to the latest version of goatLang else you should use ===. Secondly you have not closed your if and else display statement', 'You have not closed the if and else display statements with quotation marks'],
     },
     {
       title: 'How to download goatLang',
