@@ -172,7 +172,7 @@ export const hanbookContent = [
       {
         head: "Data Types",
         codeString:
-          "age = 3        //integer \nweight = 42.5  // float \nname = 'Billy' //string ",
+          "age = 3        ##integer \nweight = 42.5  ## float \nname = 'Billy' ##string ",
         explanation:
           "Declare constants using the const keyword. Constants cannot be changed once assigned.",
       },
@@ -185,7 +185,7 @@ export const hanbookContent = [
       {
         head: "Variable Naming",
         codeString:
-          "1stPlace = 'Invalid'  // Incorrect naming \nfrom = 'Invalid'  //'from' is a reserved keyword",
+          "1stPlace = 'Invalid'  ## Incorrect naming \nfrom = 'Invalid'  ##'from' is a reserved keyword",
         explanation:
           "* Do not start variable names with a number or special character.\n* Avoid using reserved keywords as variable names.",
       },
@@ -279,14 +279,14 @@ export const hanbookContent = [
     code: [
       {
         head: "Initialization",
-        codeString: "i = 0; \t//Initialize the index variable",
+        codeString: "i = 0; \t##Initialize the index variable",
         explanation:
           "In Goat Lang, before using a for loop it's essential to initialize the index variable. This is done outside the loop, typically before the loop structure.",
       },
       {
         head: "Loop Structure",
         codeString:
-          "for i from statement 1 to statement 2 by statement 3 { \n\t// Code to be executed in each iteration//  \n}",
+          "for i from statement 1 to statement 2 by statement 3 { \n\t## Code to be executed in each iteration  \n}",
         explanation:
           "Here, from 0 to 2 by 1 indicates that the loop will iterate from 0 to 2 (inclusive) with a step size of 1. You can adjust these parameters based on your specific requirements.",
       },
@@ -294,14 +294,14 @@ export const hanbookContent = [
       {
         head: "Loop Example 1",
         codeString:
-          "i = 0; \t// Initialize the index variable \nfor i from 0 to 2 by 1 {\n\tdisplay(i); \n}",
+          "i = 0; \t## Initialize the index variable \nfor i from 0 to 2 by 1 {\n\tdisplay(i); \n}",
         explanation:
           "In this example, the loop will print the values 0, 1, and 2, as it iterates over the specified range with a step size of 1.",
       },
       {
         head: "Loop Example 2",
         codeString:
-          "i = 0; \nfor i from 0 to 5 by 1 {\n\tdisplay(i); \n} \n// Outputs: 0, 1, 2, 3, 4, 5",
+          "i = 0; \nfor i from 0 to 5 by 1 {\n\tdisplay(i); \n} \n## Outputs: 0, 1, 2, 3, 4, 5",
         explanation:
           "In this example, the loop will print the values 0, 1, and 2, as it iterates over the specified range with a step size of 1.",
       },
@@ -348,13 +348,13 @@ export const hanbookContent = [
       },
       {
         head: "Loop Termination",
-        codeString: "// Loop terminates when i is no longer less than 10",
+        codeString: "## Loop terminates when i is no longer less than 10",
         explanation:
           "The loop continues executing as long as the condition is true. In this example, it terminates when 'i' is no longer less than 10.",
       },
       {
         head: "Infinite Loop Caution",
-        codeString: "// Ensure the loop condition will eventually become false",
+        codeString: "## Ensure the loop condition will eventually become false",
         explanation:
           "Be cautious to avoid infinite loops. Ensure that the loop condition will eventually evaluate to false, or include a mechanism to break out of the loop.",
       },
@@ -377,7 +377,7 @@ export const hanbookContent = [
       {
         head: "Multiple conditions with ' elf ' keyword",
         codeString:
-          "if (condition1) \n{  \n   //Code for Condition1 \n} \nelf (condition2) \n{ \n   // Code for condition2 \n} elf (condition3) \n{ \n   // Code for condition3 \n} else \n{ \n   // Code to execute when none of the conditions are true \n}",
+          "if (condition1) \n{  \n   ##Code for Condition1 \n} \nelf (condition2) \n{ \n   ## Code for condition2 \n} elf (condition3) \n{ \n   ## Code for condition3 \n} else \n{ \n   ## Code to execute when none of the conditions are true \n}",
         explanation:
           "This code snippet represents a versatile conditional structure in Goatlang. It begins with an initial 'if' condition (condition1), followed by alternative 'elf' conditions (condition2 and condition3), each with specific code blocks. The 'else' block contains code to execute when none of the preceding conditions are true. This construct allows for a multi-branch decision-making process, accommodating different scenarios based on the fulfillment of various conditions.",
       },
@@ -523,7 +523,7 @@ export const hanbookContent = [
     code: [
       {
         head: "",
-        codeString: "//coming soon",
+        codeString: "##coming soon",
       },
       // Repeat the structure for each data type you initially intended to cover
     ],
@@ -538,7 +538,7 @@ export const hanbookContent = [
     code: [
       {
         head: "",
-        codeString: "//coming soon",
+        codeString: "##coming soon",
       },
       // Repeat the structure for each data type you initially intended to cover
     ],
@@ -553,7 +553,7 @@ export const hanbookContent = [
     code: [
       {
         head: "",
-        codeString: "//coming soon",
+        codeString: "##coming soon",
       },
       // Repeat the structure for each data type you initially intended to cover
     ],
@@ -568,7 +568,7 @@ export const hanbookContent = [
     code: [
       {
         head: "",
-        codeString: "//coming soon",
+        codeString: "##coming soon",
       },
       // Repeat the structure for each data type you initially intended to cover
     ],
@@ -583,7 +583,7 @@ export const hanbookContent = [
     code: [
       {
         head: "",
-        codeString: "//coming soon",
+        codeString: "##coming soon",
       },
       // Repeat the structure for each data type you initially intended to cover
     ],
@@ -598,7 +598,7 @@ export const hanbookContent = [
     code: [
       {
         head: "",
-        codeString: "//coming soon",
+        codeString: "##coming soon",
       },
       // Repeat the structure for each data type you initially intended to cover
     ],
