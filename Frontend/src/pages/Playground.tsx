@@ -24,9 +24,7 @@ const showValue = async () => {
     alert("Please write something");
     return;
   }
-  // const formatedCodeInput = formatCodeToSingleLine(codee);
   const formatedCodeInput = codee;
-
   try {
     const response = await fetch('https://goat-lang-website-backend.vercel.app/', {
       method: 'POST',

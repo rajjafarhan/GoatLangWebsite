@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { GetTAC,astToJs,Tokenizer,AstGenerator } from 'goat-code';
+import { astToJs,Tokenizer,AstGenerator } from 'goat-code';
 import axios  from'axios';
 const port = 3000;
 
@@ -261,46 +261,7 @@ app.get("/",(req,res)=>{
     res.send("server is Running!")
 })
 
-// app.post('/', async (req, res) => {
-//   try {
-//     const codee = req.body.formatedCodeInput;
-//     // Tokenize the code, generate AST and convert to JS
-//     const [tokens, astt, code] = GetTAC(codee)
-//     const astree = traverseBFS(astt)
-//     let final
-//     const options = {
-//         method: 'POST',
-//         url: 'https://online-code-compiler.p.rapidapi.com/v1/',
-//         headers: {
-//             'content-type': 'application/json',
-//             'X-RapidAPI-Key': '093fb6c721msh07cc788b0a09003p1b7268jsnb08416c0fa3d',
-//             'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
-//         },
-//         data: {
-//             language: 'nodejs',
-//             version: 'latest',
-//             code: code,
-//             input: null
-//         }
-//     };
 
-//     try {
-//         const response = await axios.request(options);
-//         final = response.data.output
-//     } catch (error) {
-//         console.error(error);
-//     }   
-//     const jsCode = code;
-//     const ast = astt
-    
-//     res.status(200).send({ jsCode, astree, final,ast,message:"Success!" });
-  
-// } catch (error) {
-//     // Handle errors and send a meaningful response
-//     const { message, stack, name } = error;
-//     res.status(500).send({ error: { message, stack, name } });
-//   }
-// });
 
 app.post('/', async (req, res) => {
   try {
@@ -309,31 +270,49 @@ app.post('/', async (req, res) => {
     // const [tokens, astt, code] = GetTAC(codee);
     const tokens = Tokenizer(codee)
     const astt = AstGenerator(tokens)
-    const code = astToJs(astt)
+    const code = astToJs(astt);
     const astree = traverseBFS(astt);
     let final;
 
-    const options = {
-        method: 'POST',
-        url: 'https://online-code-compiler.p.rapidapi.com/v1/',
-        headers: {
-            'content-type': 'application/json',
-            'X-RapidAPI-Key': '093fb6c721msh07cc788b0a09003p1b7268jsnb08416c0fa3d',
-            'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
-        },
-        data: {
-            language: 'nodejs',
-            version: 'latest',
-            code: code,
-            input: null
-        }
-    };
+    // const options = {
+    //     method: 'POST',
+    //     url: 'https://online-code-compiler.p.rapidapi.com/v1/',
+    //     headers: {
+    //         'content-type': 'application/json',
+    //         'X-RapidAPI-Key': '093fb6c721msh07cc788b0a09003p1b7268jsnb08416c0fa3d',
+    //         'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
+    //     },
+    //     data: {
+    //         language: 'nodejs',
+    //         version: 'latest',
+    //         code: code,
+    //         input: null
+    //     }
+    // };
 
+    // try {
+    //   const response = await axios.request(options);
+    //   final = response.data.output;
+    // } catch (error) {
+    //   console.error(error);
+    // }
+
+    const options = {
+    method: "POST",
+    url: "https://ce.judge0.com/submissions?base64_encoded=false&wait=true",
+    headers: { "Content-Type": "application/json" },
+    data: {
+        source_code: code,     // your generated JS code
+        language_id: 63,       // 63 = Node.js
+    }
+    };
     try {
-      const response = await axios.request(options);
-      final = response.data.output;
+        const response = await axios.request(options);
+        console.log("Judge0 response:", code, response.data);   
+        final = response.data.stdout || response.data.stderr || "";
     } catch (error) {
-      console.error(error);
+        console.error("Execution error:", error?.response?.data || error.message);
+        final = "Execution failed";
     }
 
     const jsCode = code;

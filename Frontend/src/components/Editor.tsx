@@ -9,7 +9,7 @@ const Editor = () => {
     '  role: "Professor",\n' +
     '}\n' +
     '\n' +
-    'display(user.name)';
+    'display(user.firstName)';
   return (
     <div className='w-full h-full rounded-lg border border-gray-300 p-4 bg-teal-800'>
         <SyntaxHighlighter language="javascript" style={docco}>
